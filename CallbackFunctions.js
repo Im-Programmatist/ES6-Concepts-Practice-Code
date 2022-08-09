@@ -1,7 +1,7 @@
 /*
 --- Callback functions ---
 
-1. we can ssign function to variables
+1. we can assign function to variables
 2. We can Pass functions as an Argument -- callback functions
 3. Returning Function.
 
