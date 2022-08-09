@@ -96,3 +96,17 @@ function sum4(a,b){
 }
 sum4(20,20);
 */
+//Check Hosting Concept In JS</title>
+getName();
+console.log(x)
+
+var x = 7;
+function getName(){
+    console.log("Hello world!!!");
+}
+
+var funGetName = () => {
+    console.log("This is arrow function");
+}
+
+funGetName();
