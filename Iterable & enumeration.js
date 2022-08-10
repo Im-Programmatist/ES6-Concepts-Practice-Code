@@ -1,3 +1,10 @@
+/**
+ * There are 2 types of loop 
+ * 1. Entry Controlled Loop - for, while, foreach, for in 
+ * 2. Exit Controlled Loop - do-while
+ * 
+ */
+
 /*
 For Each loop
 */
@@ -91,4 +98,83 @@ switch (1 + 3) {
 		//break;
 	default:
 		neverhappens(3);
+}
+//execute all the conditions as break is not there
+
+/*******LABEL**********/
+//A label provides a statement with an identifier that lets you refer to it elsewhere in your program. 
+let x = 0;
+let z = 0;
+labelCancelLoops: while (true) {
+  console.log('Outer loops: ', x);
+  x += 1;
+  z = 1;
+  while (true) {
+    console.log('Inner loops: ', z);
+    z += 1;
+    if (z === 10 && x === 10) {
+      break labelCancelLoops;
+    } else if (z === 10) {
+      break;
+    }
+  }
+}
+
+/******continue statement************/
+//The continue statement can be used to restart a while, do-while, for, or label statement.
+//In unlike break statement, continue does not terminate the execution of the loop entirely. 
+{/* In a while loop, it jumps back to the condition. In a for loop, it jumps to the increment-expression*/}
+/*
+continue;
+continue label;
+*/
+let i = 0;
+let j = 10;
+checkiandj: while (i < 4) {
+	console.log(i);
+	i += 1;
+	checkj: while (j > 4) {
+		console.log(j);
+		j -= 1;
+		if ((j % 2) === 0) {
+			continue checkj;
+		}
+		console.log(j, ' is odd.');
+	}
+	console.log('i = ', i);
+	console.log('j = ', j);
+}
+
+/********for...in statement ******/
+//The for...in statement iterates a specified variable over all the enumerable properties of an object. 
+{/*for (variable in object)
+  statement
+*/}
+const person = {fname:"John", lname:"Doe", age:25};
+
+let text = "";
+for (let x in person) {
+  text += person[x];
+}
+
+/*****For Of Loop******/
+//The JavaScript for of statement loops through the values of an iterable object.
+//It lets you loop over iterable data structures such as Arrays, Strings, Maps, NodeLists, and more:
+{/*
+Syntax
+for (variable of iterable) {
+  // code block to be executed
+}*/
+}
+const cars = ["BMW", "Volvo", "Mini"];
+
+let textForOF1 = "";
+for (let x of cars) {
+	textForOF1 += x;
+}
+let language = "JavaScript";
+
+let text2 = "";
+for (let x of language) {
+	text2 += x;
 }

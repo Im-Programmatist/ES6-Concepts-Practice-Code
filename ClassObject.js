@@ -7,6 +7,24 @@ Hosting concept not works for class and object in javascript like variables & fu
 
 */
 
+//Class fields are public by default, 
+//but private class members can be created by using a hash # prefix.
+
+
+class ClassWithPrivateMethod {
+	#privateMethod() {
+	  return 'hello world';
+	}
+  
+	getPrivateMessage() {
+	  return this.#privateMethod();
+	}
+}
+
+const instance = new ClassWithPrivateMethod();
+console.log(instance.getPrivateMessage());// hello world
+
+  
 class Car {
 	constructor(name, year) {
 		this.name = name;

@@ -8,6 +8,10 @@ Variables and scope
 3. const - varial value can not change & has block scope.
 */
 
+//If you add a string to a number (or other value) everything is converted into a string first. 
+console.log('3' + 4 + 5);  // "345"
+console.log(3 + 4 + '5'); // "75"
+
 function check()
 {
 	let a = 10; // function block scope

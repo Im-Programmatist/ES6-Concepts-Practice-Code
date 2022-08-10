@@ -12,9 +12,21 @@ Data Types
         
 **Falcy Values - 
     - false, 0, empty strings (""), NaN, null, and undefined all become false. All other values become true.
-    - When I am using any one of values(null, undefined, false, '', 0) in a if statement, 
-    - it is always evaluated as fallacy(false). Also, the negation of these values((null, undefined, false, '', 0) in a if statement always evaluated as tautology(true).
-        
+    - it is always evaluated as fallacy(false). 
+    - Also, the negation of these values((null, undefined, false, '', 0) in a if statement always evaluated as tautology(true).
+    - All other values—including all objects—evaluate to true when passed to a conditional statement.
+    - Do not confuse the primitive boolean values true and false with the true and false values of the Boolean object!
+*/
+const bol = new Boolean(false);
+if (bol) {
+  // this condition evaluates to true
+  console.log("This is true as it is object of boolean");
+}
+if (bol == true) {
+  // this condition evaluates to false
+}
+
+/*
 **Operators- increment and decrement
     - You can use ++ and -- to increment and decrement respectively. These can be used as a prefix or postfix operators.
         
