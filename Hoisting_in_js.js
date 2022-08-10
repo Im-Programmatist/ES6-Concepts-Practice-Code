@@ -9,6 +9,12 @@ Hosting In JS
 //c is in lexical envirment of a and g is in lexical envirment of global execution context.
 // so c can access variable from global and a function.
     
+/**
+ * Hoisting is the default behavior of moving all the declarations at the top of the scope 
+ * before code execution. Basically, it gives us an advantage that no matter where functions 
+ * and variables are declared, they are moved to the top of their scope regardless of whether 
+ * their scope is global or local. 
+ */
 var g = 1000;
 function a(){
 	var b = 10;
