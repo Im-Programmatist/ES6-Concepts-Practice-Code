@@ -1,16 +1,30 @@
-import colors from 'colors';
+require('colors');
 /*
-Async/Await
+There are different ways to handle the asynchronous code in NodeJS or in JavaScript which are:
+Callbacks
+Promises
+Async/Await -- in this tutorial we will see this
+*/
+/*
+Async/Await - 
+* Async/Await is used to work with promises in asynchronous functions. 
+* It is basically syntactic sugar for promises. 
+* It is just a wrapper to restyle code and make promises easier to read and use.
 	 1. This is made for more comfortable way with promises.
 	 2. The word 'async' before any function that means function always return a promise.
 	 3. Async keyword is added to function to tell them to return  promise rather thatn directly returning the value.
 	 4. we can use await when calling any function that returns a promise, including web API functions.
 	 5. Keyword await makes javascript wait until that promise settles & returns its result.
-
+	 6. The keyword await makes JavaScript wait until that promise settles and returns its result.
  */
-
+const testting = new Promise( (resolve, reject) => {
+	console.log(`Test promise involking`);
+	resolve("test promise resolved...!");
+	reject("Error while communicating with API");
+});
+	
 const promiseobj1 = new Promise( (resolve, reject) => {
-	console.log(`promiseobj1 Function Called..at second ${new Date().getSeconds()}` );
+	console.log(`AA. promiseobj1 Function Called..at second ${new Date().getSeconds()}`.yellow );
 	setTimeout( () => {
 		let roll_no = [1,2,3,4,5];
 		resolve(roll_no);
@@ -19,13 +33,13 @@ const promiseobj1 = new Promise( (resolve, reject) => {
 });
 
 const getStudentData = (indexdata) => {
-	console.log(`getStudentData Function Called..at second ${new Date().getSeconds()}` );
+	console.log(`BB. getStudentData Function Called..at second ${new Date().getSeconds()}`.yellow );
 	return new Promise( (resolve, reject) => {
 		setTimeout( (indexdata) => {
 			let studentdata = { name : 'chetan', age : 27 };
 			resolve( `My roll no is ${indexdata}.  My name is ${studentdata.name} & I am ${studentdata.age} year old.`);
 			reject('No data get from getStudentData method.');
-		}, 3000, indexdata);
+		}, 3000, indexdata);//passing this->indexdata reference to setTimeout
 	});
 };
 
@@ -45,15 +59,21 @@ const getStudentData = (indexdata) => {
 
 async function getAsyncFunctionData()
 {
-	console.log("async function calles at second -",new Date().getSeconds());
+	var x = 10;
+	console.log(x);
+	console.log(`A.async getAsyncFunctionData function calles at second - ${new Date().getSeconds()}`.yellow);
+	
+	const test = await testting; 
+	console.log("test - ",test);
 	const rollNoData = await promiseobj1; //promise stored in constant variable
-	console.log(`%c 1. first promise: ${rollNoData}`,  'background: white; color: yellow');
-	console.log("Next await function(promise) runs only after first promise resolve/reject.\n---> this is the use of await, where we wait for promise even next settimeout has less timer than first  ");
-	const studData = await getStudentData(rollNoData[1]);
-	console.log("2. second promise: ",studData);
+	console.log(`1. first promise: ${rollNoData}`.blue);
 
-	console.log("------This console will run after await function runs all promises only------");
-	console.log("------These 2 promise functions will takes 6+3 = 9  sec(timer set in settimeout)------",new Date().getSeconds());
+	console.log("B. Next await function(promise) runs only after first promise resolve/reject.\n---> this is the use of await, where we wait for promise even next settimeout has less timer than first ".green);
+	const studData = await getStudentData(rollNoData[1]);
+	console.log(`2. second promise: ${studData}`.blue);
+
+	console.log("------This console will run after await function runs all promises only------".green);
+	console.log(`------These 2 promise functions will takes 6+3 = 9  sec(timer set in settimeout)------${new Date().getSeconds()}`.green);
 
 	return studData; // 1. number line  method call
 }
@@ -61,8 +81,8 @@ async function getAsyncFunctionData()
 //getAsyncFunctionData(); // 1. simply call async function if there is no 'return' data
 
 const getName = getAsyncFunctionData().then( (myname) => {
-	console.log("4.",myname);
-	console.log("5. Consoles will run as per number and respective functions call,if async and await remove, \n else async and await will run and controll flow will wait for promiseq to resolve or reject ");
+	console.log(`4. ${myname}`.blue);
+	console.log(`5. Consoles will run as per number and respective functions call,if async and await remove, \n else async and await will run and controll flow will wait for promiseq to resolve or reject`.green);
 }); // 2. If there is 'return' value from function, we have to STORE function data in any variable
 console.log("3.",getName); //Result : Promise {<pending>}
 
