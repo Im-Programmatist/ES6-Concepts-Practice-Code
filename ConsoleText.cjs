@@ -70,7 +70,7 @@ Text Colors
 	console.log('i am black'.black);
 	console.log('i am red'.red);
 	console.log('i am green'.green);
-	console.log('i am black'.yellow);
+	console.log('i am yellow'.yellow);
 	
 	console.log("\x1b[44m%s\x1b[0m" ,"Background Color Is Blue");
 	console.log("\x1b[33m%s\x1b[0m" ,"I Am Using Yellow");
