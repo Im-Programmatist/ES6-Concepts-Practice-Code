@@ -25,7 +25,6 @@ Promises
 // 2. after roll number get details of student in next 2 sec
 
 const promiseobj1 = new Promise( (resolve, reject) => {
-	
 	setTimeout( () => {
 		let roll_no = [1,2,3,4,5];
 		//resolve(roll_no);
@@ -63,8 +62,8 @@ const getData = (indexdata) => {
 {/*Recommanded way*/}
 
 promiseobj1.then( (rollno) => {
-	console.log(rollno);
-	console.log(rollno[1]);
+	console.log("roll no - ",rollno);
+	console.log("roll no ",rollno[1]);
 	return getData(rollno[1]); //return second promise method and this 'then' method to atteched first then method
 }).then( (anything) => {
 	console.log("second promise method - ", anything);
