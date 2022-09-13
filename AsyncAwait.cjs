@@ -17,6 +17,8 @@ Async/Await -
 	 5. Keyword await makes javascript wait until that promise settles & returns its result.
 	 6. The keyword await makes JavaScript wait until that promise settles and returns its result.
  */
+
+//this promise execute immediately thats why without calling it console in it runs
 const testting = new Promise( (resolve, reject) => {
 	console.log(`Test promise involking`);
 	resolve("test promise resolved...!");

@@ -24,6 +24,7 @@ Promises
 // 1. get roll number in 2 second
 // 2. after roll number get details of student in next 2 sec
 
+//this promise execute immediately thats why without calling it console in it runs
 const promiseobj1 = new Promise( (resolve, reject) => {
 	setTimeout( () => {
 		let roll_no = [1,2,3,4,5];
