@@ -7,6 +7,19 @@ Variables and scope
 2. Var - has functional scope & gobal scope.
 3. const - varial value can not change & has block scope.
 */
+/*
+var	- It can be declared without initialization.
+let	- It can be declared without initialization.
+const - It cannot be declared without initialization.
+		
+*/
+var a = 10
+// User can re-declare
+// variable using var
+var a = 8
+// User can update var variable
+a = 7
+console.log(a);
 
 //If you add a string to a number (or other value) everything is converted into a string first. 
 console.log('3' + 4 + 5);  // "345"

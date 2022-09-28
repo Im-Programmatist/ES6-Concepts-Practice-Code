@@ -23,3 +23,4 @@ function innerfunction(){
 	console.log(a+b+c+d); // result : uncaught refference error : b is not defind
 	console.log(a+d); // result : this is global var .. can not access b & c .. 
 }
+outer();
