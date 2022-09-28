@@ -3,7 +3,6 @@ Closures
 	1. Closure in action that is inner function can have access to the outer function's variable & global variables.
 	2. Closure is the combination of a function and the lexical envirment within which that function is declaired
 	3. 
-
 */
 
 // this is lexical scope as well as simple example of closure ---
