@@ -14,7 +14,6 @@ Closures
 		};
 		innerFun();
 	};
-
 	outerFun(15);
 //-------------
 

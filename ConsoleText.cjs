@@ -52,7 +52,6 @@ console.log("%cThis is a green text", "color:green");
 /*
 Text Colors
 	You can use 10 different text colors mentioned below.
-
 	-black
 	-red
 	-green
