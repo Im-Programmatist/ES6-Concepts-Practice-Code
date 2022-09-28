@@ -1,11 +1,21 @@
 //**** REST Parameter
 /*
-	Rest parameter is an improved way toi handle function parameter, allowinbg us to more easily handle various input as parameters in a function.<br/> The rest param syntax allow us to represent an indefinite number of arguments as an array 
+	Rest parameter is an improved way to handle function parameter, allowinbg us to more easily handle various input as parameters in a function.<br/> The rest param syntax allow us to represent an indefinite number of arguments as an array 
 	
-	Spread operator allows an iterable to expand in places where 0+(zero pluse) arguments are expected.it is mostly used in variable array where there is more than 1 value expected. it allows us to optain list of parameters from an array.<b> Syntax of spread operator is same as rest parameter but it works completely opposite - it replace apply() method 
+	Spread operator allows an iterable to expand in places where 0+(zero pluse) arguments are expected.
+	it is mostly used in variable array where there is more than 1 value expected. 
+	it allows us to optain list of parameters from an array.
+	Syntax of spread operator is same as rest parameter but it works completely opposite - it replace apply() method 
+	
 	*** Rest parameter apply on param of function & spread used at argument while calling myFunction
 
 */
+/**
+ * The mejor difference in spred and rest operators is 
+ * the rest operator puts the rest of some specific user-supplied values into a JavaScript array. 
+ * But the spread syntax expands iterables into individual elements.
+*/
+
 	//ES5
 	function sum(a,b,c,d,e,f,g,h){
 		console.log(a+b+c+d+e+f+g+h);
@@ -50,7 +60,8 @@
 	let arr4 = [10,11,12];
 	//normal way
 	//arr1 = arr1.concat(arr2);
-	//console.log("Normal way -- ",arr1);
+	console.log("Normal way to print array-- ",arr1);
+	console.log("Using Spred operator to print items of array -- ",...arr1);
 	arr1 = [...arr1,...arr2,...arr3,...arr4];
 	console.log("ES6 way using spread operator -- ",arr1);
 
@@ -65,3 +76,17 @@
 	let arrc2es6 = [...arrc1,6,7,...arrc3];// no need of push method
 	console.log("arrc1",arrc1);
 	console.log("arrc2es6",arrc2es6);//6, & 7 get push and not changed arrc1 
+
+//getting numerous argument using default reserved keyword - argument 
+function testArgument(){
+	console.log("get array of argument without define param to function -", arguments);
+	const ags1 = arguments[0];
+	console.log("first param is", ags1);
+}
+testArgument(1,2,3,4,5,6)
+//getting multiple argument using rest operator
+function testRestOperator(a,b, ...c){
+	//c will be in array format
+	console.log("All params will be(using rest parameter)", a, b, c);
+}
+testRestOperator(7,8,9,10,11,12);
