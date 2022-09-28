@@ -45,7 +45,7 @@ console.log("%cThis is a green text", "color:green");
 	BgCyan = "\x1b[46m"	
 	BgWhite = "\x1b[47m"	
 */
-	
+
 // Using an npm package - By using colors package one can easily customize the styles in node console. 
 //Unlike the native way, using colors is pretty simple and all you need to do is to write some human readable code. Below are the examples.
 
