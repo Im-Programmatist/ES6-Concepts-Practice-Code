@@ -52,3 +52,21 @@ Async/Await -- in this tutorial we will see this
 
 	asyncBtn.addEventListener('click', waitASync);
 	
+	async function testAsync() {
+		// Label for outerloop
+		let sum = 0;
+		while (sum < 10e3) {
+			sum = sum + 100;
+			console.log("sum = ",sum );
+		}
+	}
+	
+	async function abc(){
+		const b = await testAsync();
+		const a = await new Promise((resolve, reject)=>{
+			resolve("promise inside abc resolved")
+		})
+		console.log(a);
+	}
+	abc();
+	console.log("Testing abc");//this will run first if async 
