@@ -4,16 +4,21 @@ GEC & Event loop
 
 /**
  * *Execution Context Envirnment & Execution stack
-	1. GEC(Global Execution context) js engine creates the global execution context before it start to execute any code. It is none other than execution context except it creates default
+	1. GEC(Global Execution context) js engine creates the global execution context before it start to execute 
+	any code. It is none other than execution context except it creates default
 	2. New execution context create every time when function is executed.
-	3. GEC -> associates with global object , means Windows Object. like - this === window, name = window.name (go in to console and type this, name ="chetan thin window--")
+	3. GEC -> associates with global object , means Windows Object. like - this === window, 
+	name = window.name (go in to console and type this, name ="chetan thin window--")
 	Execution stack  
-		Excecution stack also known as calling stack - it is a stack with a LIFO(Last in First Out) structure which is use to store all the execution context created during the code execution.</i>
+		Excecution stack also known as calling stack - it is a stack with a LIFO(Last in First Out) 
+		structure which is use to store all the execution context created during the code execution.</i>
 */
 
 /** 
  * *JavaScript interpreter -
-	interpreter creates a new context whenever it’s about to execute a function or script we’ve written. Every script/code starts with an execution context called a global execution context. And every time we call a function, a new execution context is created and is put on top of the execution stack. 
+	interpreter creates a new context whenever it’s about to execute a function or script we’ve written. 
+	Every script/code starts with an execution context called a global execution context. 
+	And every time we call a function, a new execution context is created and is put on top of the execution stack. 
 	The same pattern follows when you call the nested function which calls another nested function:
 */
 //Reffer image - <img src="executionenv.png" alt="img"/> 
