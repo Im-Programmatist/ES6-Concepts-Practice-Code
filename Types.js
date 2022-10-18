@@ -14,17 +14,20 @@ Types In JS</title>
 	let d;
 	let e = "";
 	let f = null; 
-	console.log("typeof a",typeof(a));
-	console.log("typeof b",typeof(b));
-	console.log("typeof c",typeof(c));
-	console.log("typeof d",typeof(d));//undefind
-	console.log("typeof e",typeof(e));
-	console.log("typeof f",typeof(f));//object --> because there is mistek while making javascript, we can not return null type to show, though it is in primitive datatype
+	console.log("typeof a=1 -",typeof(a));//number
+	console.log("typeof b='chetan' -",typeof(b));//string
+	console.log("typeof c=true -",typeof(c));//boolean
+	console.log("typeof let d -",typeof(d));//undefind
+	console.log("typeof e='' -",typeof(e));//string
+	console.log("typeof f=null -",typeof(f));//object --> because there is mistek while making javascript, we can not return null type to show, though it is in primitive datatype
 	console.log("typeof {}",typeof({}));//object
+	console.log("typeof function(){}",typeof(function(){}));//function
+	function abc(){};
+	console.log("typeof function abc -",typeof(abc));//function
+	console.log("typeof function abc -",typeof(abc()));//Undefined (Called abc)as it doesnt return any type of data
 
 //------------------------------------
-	console.log("typeof function(){}",typeof(function(){}));//function
-//though it is function showing as ype but it is an object
+//though it is function showing as type but it is an object
 // we have created check arrow function and call like an object as check.letshavefun, added letshavefun variable to function just like object
 	const check = () => {
 		console.log("checking...");
