@@ -63,5 +63,18 @@ console.log(person);
  * 8. Variable Declaration - let, const
  * 9. Arrow Functions
  * 10. Module & Export
- *  
+ * 11. Map, set, weakSet, and weakMap
+ * 12. Symbol datatype to make unique identifiers strings/variable
+ * 13. leading bang! - to call/invoked anonymous function (es5 gives syntax error while defining anonymous function)
+ * (SyntaxError: Function statements require a function name)
 */
+//leading bang! (if we remove ! it gives error for tht we need to wrap it)
+!function () {
+    console.log('Leading bang ! example');
+}();
+//self-invoking anonymous functions
+let num1 = 10;
+let num2 = 10;
+(function (a, b) {
+    console.log(a * b);
+})(num1, num2);
