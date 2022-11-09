@@ -44,3 +44,6 @@ let y = ()=> {
     console.log(arguments);
 };
 new y(1,2,3);// Syntax error - y is not constructor
+
+
+
