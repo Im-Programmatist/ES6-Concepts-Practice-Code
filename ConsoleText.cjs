@@ -84,3 +84,75 @@ Text Colors
 	//line-height
 	//Syntax line-height: 3
 	console.log("%cThis Is Line One \n %c This Is Line Two \n %c This Is Line Three", "line-height: 0.8;", "line-height: 1.7;", "line-height: 3;")
+
+	console.log('Console Log')
+	console.info('Console Info')
+	console.debug('Console Debug')
+	console.warn('Console Warn')
+	console.error('Console Error')
+	
+	//If the first argument is false, then the message will be logged.
+	//If first argument true then no result will be logged
+	let isItWorking = false;
+	console.assert(isItWorking, "this is the reason why")
+
+	//Console count
+	// for(i=0; i<10; i++){
+	// 	console.count()
+	// }
+	// for(i=0; i<10; i++){
+	// 	console.count('Counter 1')//we can name the counter
+	// }
+	//reset counter - if we not reset then it will continue in the next usage.
+	//console.countReset('Counter 1')
+	// for(i=0; i<10; i++){
+	// 	console.count('Counter 1')// may start from 11 to 20 if not reset early
+	// }
+
+	//Track Time 
+	console.time('first-setTimeout')//it is needed to track time for settimeout
+	//else it will take default as name
+	setTimeout(() => {
+		console.timeEnd('first-setTimeout')
+	}, 5000);
+
+	console.time('second-setTimeout')
+	//We can also log the current time of our timer while it's running, without stopping it
+	setTimeout(() => {
+		console.timeLog('second-setTimeout')
+	}, 2000);
+
+	console.group();
+	console.log('I am in a group');
+	console.log('I am also in a group');
+	console.groupEnd();
+
+
+	//Trace
+	function one() {
+		two()
+	}
+	function two() {
+		three()
+	}
+	function three() {
+		console.trace()
+	}
+	one();
+
+	let devices = [
+		{
+		  name: 'iPhone',
+		  brand: 'Apple'
+		},
+		{
+		  name: 'Galaxy',
+		  brand: 'Samsung'
+		}
+	];
+	console.table(devices);
+	console.table(devices, ['brand']);
+	console.table(devices, ['name', 'email']);
+
+	//Clear all console 
+	//console.clear();
