@@ -95,3 +95,18 @@ for (const [key, value] of Object.entries(object)) {
   console.log(key, value);
 }
 
+
+/**
+ * Foreach
+*/
+
+const student2 = {
+    male: 4,
+    female: 93,
+    others: 10
+};
+Object.entries(student2).forEach(
+    ([key, value]) => console.log("For each:",key, value)
+);
+const arr = [1,2,3,4,5];
+arr.forEach((item, index) => console.log("For each arr :",item, index));
