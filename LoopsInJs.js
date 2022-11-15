@@ -110,3 +110,41 @@ Object.entries(student2).forEach(
 );
 const arr = [1,2,3,4,5];
 arr.forEach((item, index) => console.log("For each arr :",item, index));
+
+
+//Foreach loop on array and object
+
+var arrForeach = [1,2,3,5,6,4,8,9,10]
+var objForeach = {
+    name:'Chetan',
+    age:20,
+    address:{
+        city:'Nagpur',
+        country:'India'
+    }
+}
+
+arrForeach.forEach((item, index) => console.log(item, index));
+Object.entries(objForeach).forEach((item, index) => console.log(item, index));
+Object.keys(objForeach).forEach((key, index) => {
+        console.log(key, index); 
+        console.log(objForeach[key]);
+    }
+);
+console.info('for of loop on array ---');
+for(item of arrForeach){
+    console.log(item);
+}
+console.info('for of loop on object entries ---');
+for(item of Object.entries(objForeach)){
+    console.log(item);
+}
+console.info('for of loop on object keys ---');
+for(item of Object.keys(objForeach)){
+    console.log(item);
+    console.log(objForeach[item]);
+}
+console.info('for in loop on object directly ---');
+for(key in objForeach){
+    console.log(objForeach[key]);
+}
