@@ -148,3 +148,8 @@ console.info('for in loop on object directly ---');
 for(key in objForeach){
     console.log(objForeach[key]);
 }
+
+console.info('for in loop on object values ---');
+Object.values(objForeach).forEach(val => {
+    console.log(val);
+});
