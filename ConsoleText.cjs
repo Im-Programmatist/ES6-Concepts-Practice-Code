@@ -97,17 +97,17 @@ Text Colors
 	console.assert(isItWorking, "this is the reason why")
 
 	//Console count
-	// for(i=0; i<10; i++){
-	// 	console.count()
-	// }
-	// for(i=0; i<10; i++){
-	// 	console.count('Counter 1')//we can name the counter
-	// }
+	for(i=0; i<10; i++){
+		console.count()
+	}
+	for(i=0; i<10; i++){
+		console.count('Counter 1')//we can name the counter
+	}
 	//reset counter - if we not reset then it will continue in the next usage.
-	//console.countReset('Counter 1')
-	// for(i=0; i<10; i++){
-	// 	console.count('Counter 1')// may start from 11 to 20 if not reset early
-	// }
+	console.countReset('Counter 1')
+	for(i=0; i<10; i++){
+		console.count('Counter 1')// may start from 11 to 20 if not reset early
+	}
 
 	//Track Time 
 	console.time('first-setTimeout')//it is needed to track time for settimeout
