@@ -7,12 +7,34 @@
  * do/while - also loops through a block of code while a specified condition is true
  */
 
+/*
+for (x; y; z)
+
+x - Executed before the enumeration
+y - condition to test
+z - expression after each enumeration (so,until B evaluated to false)
+
+*** Declare Variables Outside of the For Statement(Y part of loop here- condition)
+
+*/
 /**
  * For-Of on iterables object- we can traverse through iterable object using for-of not for-in
  * like @array, @Sets, @Map, @string
  * 
  * For-in used to traverse through object property
 */
+function testCond(){
+    console.count('testCOndition');
+    return 5;
+}
+for(var i=0; i<testCond(); i++){
+    console.log('for with i<testCond() -i ', i);
+}//You will find testCond() function called in each iteration 
+//It is unnecessary overhead we must reduce it
+
+for(var i=0, len=testCond(); i<len; i++){
+    console.log('for var i=0, len=testCond(); -i ', i);
+}
 
 /*
 The for...in loop iterates through properties in the prototype chain. 
@@ -153,3 +175,14 @@ console.info('for in loop on object values ---');
 Object.values(objForeach).forEach(val => {
     console.log(val);
 });
+
+/**
+ * 
+    for (var i=0; i<array.length; i++) { //some logic }
+**  above for loop is equivalent to below while loop 
+    var i = 0;
+    while (i < array.length) {
+        //some logic
+        i++;
+    }
+ */
