@@ -15,14 +15,8 @@ y - condition to test
 z - expression after each enumeration (so,until B evaluated to false)
 
 *** Declare Variables Outside of the For Statement(Y part of loop here- condition)
+*/
 
-*/
-/**
- * For-Of on iterables object- we can traverse through iterable object using for-of not for-in
- * like @array, @Sets, @Map, @string
- * 
- * For-in used to traverse through object property
-*/
 function testCond(){
     console.count('testCOndition');
     return 5;
@@ -35,11 +29,19 @@ for(var i=0; i<testCond(); i++){
 for(var i=0, len=testCond(); i<len; i++){
     console.log('for var i=0, len=testCond(); -i ', i);
 }
+/**
+ * For-Of on iterables object- we can traverse through iterable object using for-of 
+ * like @array, @Sets, @Map, @string
+ * 
+ * For-in used to traverse through object property
+*/
 
 /*
 The for...in loop iterates through properties in the prototype chain. 
 This means that we need to check if the property belongs to the object 
 using hasOwnProperty whenever we loop through an object with the for…in
+
+***We can apply for-in on array as well but there is no property it takes indexes of array as key/property
 */
 const students = {
     male: 4,
@@ -54,8 +56,18 @@ for (const key in students) {
 }
 //bellow code will not works as student is not iterable
 // for (let x of students) {
-//     console.log('x:' ,x);
-// }
+    //     console.log('x:' ,x);
+    // }
+
+//** For in on array - works on array as well 
+
+const studArray = ['chetan','korde','patil'];
+for (const key in studArray) {
+    console.log('----------------', key);
+    if (studArray.hasOwnProperty(key)) {
+        console.log(`${key}: ${studArray[key]}`);
+    }
+}
 
 //Instead of hasOwnProperty we cn use object static method 
 // Object.keys()
@@ -104,10 +116,10 @@ for(item of mySet){
  * The while loop loops through a block of code as long as a specified condition is true.
 */
 var textwhile = "";
-let i = 0
-while (i < 10) {
-    textwhile += "The number is " + i;
-    i++;
+let ii = 0
+while (ii < 10) {
+    textwhile += "The number is " + ii;
+    ii++;
 }
 console.log('Text while :', textwhile);
 
