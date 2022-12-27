@@ -18,6 +18,7 @@ Promises
 		
 			1. then - after resolve function call --
 			2. catch  - after reject function call --
+			3. finally - call after each reject or resolve
 */
 
 // our task is -
@@ -186,3 +187,27 @@ Promise.allSettled(promises).
 // expected output:
 // "fulfilled"
 // "rejected"
+
+/**
+ * Promise with multiple then then 
+ * - all then will run one by one after promise resolve
+ * - If promise reject then first catch block run and exit (not call all catch block like then)
+ * - If promise reject then first catch block execute, if after catch block there is then block then all that then block available get call
+ * - If catch followed by then multiple blocks or then block may have catch in between, even this all then blocks runs except catch 
+*/
+const prom = new Promise((resolve, reject) => {
+	//if(i%2==0)
+	//    resolve(`test resolve ${i}`);
+	//else
+		reject(`test reject ${i}`);
+});//Goes in job queue and event loop give preference to this first(promise, process.nexttick, async function)
+let t = '';
+prom.then((res) => { console.log(`1. then`); })
+//.catch((err) => { t = i+" catch"; console.log(`1. catch ${t}`, err, i); })
+.then((res) => { console.log(`2. then`); })
+.then((res) =>{ console.log(`3. then`); })
+.catch((err) => {console.log(`1.1. catch`); })
+.then((res) =>{ console.log(`4. then`); })
+.catch((err) => {console.log(`1.2. catch`); })
+.then((res) =>{ console.log(`5. then`); })
+.catch((err) =>{ console.log(`2. catch`); })
