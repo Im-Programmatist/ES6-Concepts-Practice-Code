@@ -211,3 +211,12 @@ prom.then((res) => { console.log(`1. then`); })
 .catch((err) => {console.log(`1.2. catch`); })
 .then((res) =>{ console.log(`5. then`); })
 .catch((err) =>{ console.log(`2. catch`); })
+
+Promise.reject('Promise rejected!')
+//Promise.resolve('Promise resolved!')
+.then((res)=>{console.log('then', res);}) //for resolve, this will run 
+.catch((err)=>{console.log('catch',err);}) //for Reject, this will run 
+.then((res)=>{console.log('then',res);}) //for resolve, this will run //for Reject, this will run 
+.then((res)=>{console.log('then',res);}) //for resolve, this will run //for Reject, this will run 
+.catch((err)=>{console.log('catch',err);}) // This will not run in any condition until first catch block remove
+.then((res)=>{console.log('then',res);}) //for resolve, this will run //for Reject, this will run 
