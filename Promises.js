@@ -20,6 +20,10 @@ Promises
 			2. catch  - after reject function call --
 			3. finally - call after each reject or resolve
 */
+/*
+	all() returns a promise that resolves to an array of values from the input promises while the Promise. 
+	race() returns a promise that resolves to the value from the first settled promise.
+*/
 
 // our task is -
 // 1. get roll number in 2 second
