@@ -164,15 +164,16 @@ const promise33 = new Promise((resolve, reject) => {
 	setTimeout(reject, 100, "three");
 });
 
-Promise.any([promise11, promise33, promise22])
-	.then((value) => {
-		// Only promise1 is fulfilled, even though promise2 settled sooner
-	 	console.log("succeeded with value:", value);
-	})
-	.catch((reason) => {
-		// Only promise1 is fulfilled, but promise2 is faster
-		console.error("failed with reason:", reason);
-	});// expected output: "failed with reason: two"
+//The method Promise.any is supported in node.js 15.0.0 & above
+// Promise.any([promise11, promise33, promise22])
+// 	.then((value) => {
+// 		// Only promise1 is fulfilled, even though promise2 settled sooner
+// 	 	console.log("succeeded with value:", value);
+// 	})
+// 	.catch((reason) => {
+// 		// Only promise1 is fulfilled, but promise2 is faster
+// 		console.error("failed with reason:", reason);
+// 	});// expected output: "failed with reason: two"
 
 
 /*
@@ -224,3 +225,17 @@ Promise.reject('Promise rejected!')
 .then((res)=>{console.log('then',res);}) //for resolve, this will run //for Reject, this will run 
 .catch((err)=>{console.log('catch',err);}) // This will not run in any condition until first catch block remove
 .then((res)=>{console.log('then',res);}) //for resolve, this will run //for Reject, this will run 
+
+
+/*
+We can use primises and settimeout to hold the execution 
+Sleep functionality can implement in node like other languages do with sleep() inbuild function
+*/
+console.log('Testing sleep start');
+const sleep = (time) => {
+	return new Promise((resolve) => {
+	  setTimeout(resolve, time);
+	});
+};
+sleep(5000);
+console.log('after sleep function called');//ideally it shoud run before promise(settimeout) but no work so. 
