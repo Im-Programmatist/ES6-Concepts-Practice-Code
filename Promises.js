@@ -25,6 +25,15 @@ Promises
 	race() returns a promise that resolves to the value from the first settled promise.
 */
 
+/**
+ * Execution order of promises with then and catch block
+ * 1. First promise block code goes in call stack and then execute whatever logic written in the block
+ * 2. Secondly, as soon as resolve get called(resolve(data)) line executes, control put then call back function in call stack
+ * 3. Same with error and reject line, it calls catch block  
+ * 4. suppose there is settimeout of io operation of callback in promise block before resolve/reject then
+ * that logic will call first , settimeout of whatever time will run first then it will call then/catch block.
+ */
+
 // our task is -
 // 1. get roll number in 2 second
 // 2. after roll number get details of student in next 2 sec
@@ -39,7 +48,7 @@ const promiseobj1 = new Promise( (resolve, reject) => {
 });
 
 const getData = (indexdata) => {
-	return new Promise( (resolve, reject) => {
+	return new Promise((resolve, reject) => {
 		setTimeout( (indexdata) => {
 			let studentdata = { name : 'chetan', age : 27 };
 			resolve( `My roll no is ${indexdata}.  My name is ${studentdata.name} & I am ${studentdata.age} year old.`);
@@ -47,7 +56,6 @@ const getData = (indexdata) => {
 		}, 2000, indexdata);
 	});
 };
-
 
 // Settimeout defination
 //setTimeout(handler: any, timeout?: long, arguments...: any);
@@ -237,5 +245,30 @@ const sleep = (time) => {
 	  setTimeout(resolve, time);
 	});
 };
-sleep(5000);
+// do something
+await sleep(5000);
+// do something else
 console.log('after sleep function called');//ideally it should run before promise(settimeout) but no work so. 
+
+
+const promis1 = new Promise((resolve, reject) => {
+    setTimeout(resolve, 550, 'one');
+});
+
+const promis2 = new Promise((resolve, reject) => {
+    setTimeout(resolve, 500, 'two');
+});
+  
+const promis3 = new Promise((resolve, reject) => {
+    setTimeout(resolve, 100, 'three');
+});
+  
+Promise.race([promis1, promis2, promis3]).then((value) => {
+    console.log('Race - ',value);
+    //All resolve, but promise2 is faster but only when all promises are resolved
+});
+
+Promise.all([promis1, promis2, promis3]).then((value) => {
+    console.log('All - ',value);
+    //all resolve & result will be value, but promise3 is faster but only when all promises are resolved
+});
