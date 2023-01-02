@@ -229,7 +229,7 @@ Promise.reject('Promise rejected!')
 
 /*
 We can use primises and settimeout to hold the execution 
-Sleep functionality can implement in node like other languages do with sleep() inbuild function
+Sleep functionality can implement in node like other languages do with sleep() inbuilt function
 */
 console.log('Testing sleep start');
 const sleep = (time) => {
@@ -238,4 +238,4 @@ const sleep = (time) => {
 	});
 };
 sleep(5000);
-console.log('after sleep function called');//ideally it shoud run before promise(settimeout) but no work so. 
+console.log('after sleep function called');//ideally it should run before promise(settimeout) but no work so. 
