@@ -42,3 +42,13 @@ const subset = { 'foo-bar': foo, bar, baz };
 //Converting Object to array in js
 var convObjToArray = Object.entries(subset);
 // now we can apply array related operators like rest, destructuring and spread
+
+/** 
+ * JS ES6 Destructuring, assign entire object and destructure its properties at the same time 
+*/
+const
+    a = { x: 1, y: 5 },
+    { a: b, a: { x } } = { a };
+
+console.log(b);
+console.log(x);
