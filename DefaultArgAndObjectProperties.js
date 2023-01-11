@@ -26,3 +26,19 @@ const defaultValue1 = { name : name, age : age, born : born };
 //result { name : 'chetan', age : 27, born : 'Kalgavhan'} or { name_property : 'chetan', age_property : 27, born_property : 'Kalgavhan'}
 const sortObject = { name, age, born};
 //result { name : 'chetan', age : 27, born : 'Kalgavhan'}
+
+//How to get a subset of a javascript object's properties
+//Using Object Destructuring and Property Shorthand
+const object = { a: 5, b: 6, c: 7  };
+const picked = (({ a, c }) => ({ a, c }))(object);
+console.log(picked); // { a: 5, c: 7 }
+//Same example explain 
+//IIFE
+subset = (({ 'foo-bar': foo, bar, baz }) => ({ 'foo-bar': foo, bar, baz }))(obj);
+//Temporary variables
+const { 'foo-bar': foo, bar, baz } = obj;
+const subset = { 'foo-bar': foo, bar, baz };
+
+//Converting Object to array in js
+var convObjToArray = Object.entries(subset);
+// now we can apply array related operators like rest, destructuring and spread
