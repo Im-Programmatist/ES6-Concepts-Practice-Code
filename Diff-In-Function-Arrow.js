@@ -53,5 +53,6 @@ let new_constructive = function(){
     console.log("new_constructive-",arguments);
 };
 var yy= new new_constructive(1,2,3);
+console.log('yy-',yy)
 
 
