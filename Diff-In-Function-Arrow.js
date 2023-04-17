@@ -3,8 +3,9 @@
  * 1.No need to use function and return keyword 
  * 2.Like normal function arrow function does not have their own 'this' reference 
  * 3.Arrow function does not have argument of their own like normal function
- * Arguments objects are not available in arrow functions
- * 4.Arrow functions are only ‘callable’ and not constructible. Normal functions are both constructible and callable
+ * 4.Arguments objects are not available in arrow functions
+ * 5.Arrow functions are only ‘callable’ and not constructible. Normal functions are both constructible and callable
+ * 6.Since regular functions are constructible, they can be called using the ‘new’ keyword. 
 */
 
 //1
@@ -45,5 +46,11 @@ let y = ()=> {
 };
 new y(1,2,3);// Syntax error - y is not constructor
 
+ 
+//Constructive -using new keyword
+let new_constructive = function(){
+    console.log(arguments);
+};
+var yy= new new_constructive(1,2,3);
 
 
