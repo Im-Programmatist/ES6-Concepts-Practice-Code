@@ -41,15 +41,16 @@ function Article(topic) {
 const article= new Article('JavaScript');
 console.log(article);
 new x(1,2,3);
+
 let y = ()=> {
     console.log(arguments);
 };
-new y(1,2,3);// Syntax error - y is not constructor
+//new y(1,2,3);// Syntax error - y is not constructor
 
  
 //Constructive -using new keyword
 let new_constructive = function(){
-    console.log(arguments);
+    console.log("new_constructive-",arguments);
 };
 var yy= new new_constructive(1,2,3);
 
