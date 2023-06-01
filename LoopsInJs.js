@@ -7,6 +7,19 @@
  * do/while - also loops through a block of code while a specified condition is true
  */
 
+/**
+ * Definite Loops are those loop where you know the exact number of iterations prior to entering the loop like - For, ForIn, ForOf
+ * Indefinite Loops are those loop where you don't know the exact number of iterations  prior to entering the loop like - While & Do-While
+*/
+
+/**
+ * for - loops through a block of code a number of times
+ * for/in - loops through the properties of an object
+ * for/of - loops through the values of an iterable object
+ * while - loops through a block of code while a specified condition is true
+ * do/while - also loops through a block of code while a specified condition is true
+ */
+
 /*
 for (x; y; z)
 

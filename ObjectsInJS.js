@@ -1,4 +1,6 @@
-
+/**
+ * Objects are enumerable in javascript, whe can only travels through it's property (key)
+*/
     // <p id="demo"></p>
     //<button id="click me">Click me</button> 
 
