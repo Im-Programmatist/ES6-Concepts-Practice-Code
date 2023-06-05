@@ -9,6 +9,14 @@
 */
 
 //1
+function norm1 (data){
+    return data+1; //need return keyword to return 
+}
+let dataNorm = norm1(2);console.log('data return from normal', dataNorm);
+const arrFunc = (data) => data+1; //no need to use return keyword 
+let dataArrow = arrFunc(2); console.log('data retutn from arrow function ', dataArrow);
+
+//2.
 let person = {
     name: "Chetan Korde Patil",
     arrFun:() => {
@@ -20,7 +28,8 @@ let person = {
 };
 person.arrFun();
 person.normalFun();
-//2.
+
+//3.
 const arr1 =()=>{
     console.log('Argument in arrow - ', arguments);
     console.log('this in arrow function : ', this);//{}
@@ -31,23 +40,32 @@ arr1(1,2,3,4);
     console.log('Argument in normal function - ', arguments);
     //console.log('this in normal function : ', this);
 })(1,2,3,4)
+
+
 //3.
+function normal(){
+    console.log('Normal function arguments', [...arguments]);
+}
+normal(1,2,3,4,5,6.7); 
+let y = ()=> {
+    console.log(arguments);
+};
+//new y(1,2,3);// Syntax error - y is not constructor
+
+
+//5.
 let x = function(){
     console.log(arguments);
 };
 function Article(topic) {
     this.topic= topic;
 }
-const article= new Article('JavaScript');
-console.log(article);
+const article1= new Article('JavaScript');
+const article2= new Article('Node');
+console.log(article1, article12);
 new x(1,2,3);
 
-let y = ()=> {
-    console.log(arguments);
-};
-//new y(1,2,3);// Syntax error - y is not constructor
 
- 
 //Constructive -using new keyword
 let new_constructive = function(){
     console.log("new_constructive-",arguments);
