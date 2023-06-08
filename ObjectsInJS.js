@@ -1,6 +1,13 @@
 /**
  * Objects are enumerable in javascript, whe can only travels through it's property (key)
 */
+
+/*
+    reference to object predefined properties -
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
+
+*/
+
     // <p id="demo"></p>
     //<button id="click me">Click me</button> 
 
